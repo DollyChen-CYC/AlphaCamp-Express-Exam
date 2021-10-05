@@ -15,6 +15,11 @@ app.get('/', (req, res) => {
   res.render('index')
 })
 
+app.get('/:page', (req, res) => {
+  const pageName = req.params.page
+  res.render('index', { pageName })
+})
+
 // listen routes
 app.listen(port, () => {
   console.log(`Express app is running on the http://localhost:${port}`)
